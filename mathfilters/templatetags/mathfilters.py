@@ -12,7 +12,7 @@ def int_or_float(arg):
         return float(arg)
     
 
-@register.filter(is_safe=False)
+@register.filter
 def sub(value, arg):
     """Subtracts the arg from the value."""
     try:
@@ -22,9 +22,10 @@ def sub(value, arg):
             return value - arg
         except Exception:
             return ''
+sub.is_safe = False
 
 
-@register.filter(is_safe=False)
+@register.filter
 def mul(value, arg):
     """Multiplies the arg with the value."""
     try:
@@ -34,9 +35,10 @@ def mul(value, arg):
             return value * arg
         except Exception:
             return ''
+mul.is_safe = False
 
 
-@register.filter(is_safe=False)
+@register.filter()
 def div(value, arg):
     """Divides the arg by the value."""
     try:
@@ -46,9 +48,10 @@ def div(value, arg):
             return value / arg
         except Exception:
             return ''
+div.is_safe = False
 
 
-@register.filter(name='abs', is_safe=False)
+@register.filter(name='abs')
 def absolute(value):
     """Returns the absolute value."""
     try:
@@ -58,3 +61,4 @@ def absolute(value):
             return abs(value)
         except Exception:
             return ''
+absolute.is_safe = False
