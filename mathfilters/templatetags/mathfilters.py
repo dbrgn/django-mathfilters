@@ -37,3 +37,15 @@ def div(value, arg):
             return value / arg
         except Exception:
             return ''
+
+
+@register.filter(is_safe=False)
+def abs(value):
+    """Returns the absolute value."""
+    try:
+        return abs(int(value))
+    except (ValueError, TypeError):
+        try:
+            return abs(value)
+        except Exception:
+            return ''

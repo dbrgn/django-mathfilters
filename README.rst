@@ -32,6 +32,7 @@ provides the following filters:
 * ``sub`` – subtraction
 * ``mul`` – multiplication
 * ``div`` – division
+* ``abs`` – absolute value
 
 **Example:**
 
@@ -55,6 +56,8 @@ provides the following filters:
         {% with numerator=12 denominator=3 %}
         <li>12 / 3 = {{ numerator|div:denominator }}</li>
         {% endwith %}
+
+        <li>|-13| = {{ -13|abs }}</li>
     </ul>
 
 
