@@ -39,8 +39,8 @@ def div(value, arg):
             return ''
 
 
-@register.filter(is_safe=False)
-def abs(value):
+@register.filter(name='abs', is_safe=False)
+def absolute(value):
     """Returns the absolute value."""
     try:
         return abs(int(value))
