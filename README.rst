@@ -38,7 +38,7 @@ provides the following filters:
 
 ::
 
-    {% load 'mathfilters' %}
+    {% load mathfilters %}
 
     ...
 

@@ -1,4 +1,6 @@
 *.pyc
+*.swo
+*.swp
 /MANIFEST
 /build/
 /dist/
