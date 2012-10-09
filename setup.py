@@ -2,7 +2,7 @@
 
 from distutils.core import setup
 
-setup(name='mathfilters',
+setup(name='django-mathfilters',
       version='0.1.0',
       description='A set of simple math filters for Django',
       long_description=open('README.rst').read(),
