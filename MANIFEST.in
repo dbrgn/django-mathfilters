@@ -1,0 +1,4 @@
+include README.rst
+include LICENSE
+recursive-include mathfilters/templatetags *
+recursive-exclude * *.pyc
