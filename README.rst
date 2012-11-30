@@ -2,9 +2,9 @@
 django-mathfilters
 ##################
 
-.. image:: https://secure.travis-ci.org/gwrtheyrn/django-mathfilters.png?branch=master
+.. image:: https://secure.travis-ci.org/dbrgn/django-mathfilters.png?branch=master
     :alt: Build status
-    :target: http://travis-ci.org/gwrtheyrn/django-mathfilters
+    :target: http://travis-ci.org/dbrgn/django-mathfilters
 
 django-mathfilters is a pip-installable module that provides different simple
 math filters for Django.
