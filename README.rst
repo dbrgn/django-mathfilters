@@ -16,6 +16,9 @@ Django ticket `#361 <https://code.djangoproject.com/ticket/361>`_ has been
 closed as *wontfix*, so I had to create an alternative that is easy to install
 in a new Django project.
 
+It currently supports `int`, `float` and `Decimal` types, or any other type that
+can be converted to int or float.
+
 
 Installation
 ============

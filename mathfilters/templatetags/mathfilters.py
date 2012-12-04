@@ -1,10 +1,11 @@
 from django.template import Library
+from decimal import Decimal
 
 register = Library()
 
 
-def int_or_float(arg):
-    if isinstance(arg, int) or isinstance(arg, float):
+def valid_numeric(arg):
+    if isinstance(arg, (int, float, Decimal)):
         return arg
     try:
         return int(arg)
@@ -16,7 +17,7 @@ def int_or_float(arg):
 def sub(value, arg):
     """Subtracts the arg from the value."""
     try:
-        return int_or_float(value) - int_or_float(arg)
+        return valid_numeric(value) - valid_numeric(arg)
     except (ValueError, TypeError):
         try:
             return value - arg
@@ -29,7 +30,7 @@ sub.is_safe = False
 def mul(value, arg):
     """Multiplies the arg with the value."""
     try:
-        return int_or_float(value) * int_or_float(arg)
+        return valid_numeric(value) * valid_numeric(arg)
     except (ValueError, TypeError):
         try:
             return value * arg
@@ -42,7 +43,7 @@ mul.is_safe = False
 def div(value, arg):
     """Divides the arg by the value."""
     try:
-        return int_or_float(value) / int_or_float(arg)
+        return valid_numeric(value) / valid_numeric(arg)
     except (ValueError, TypeError):
         try:
             return value / arg
@@ -55,7 +56,7 @@ div.is_safe = False
 def absolute(value):
     """Returns the absolute value."""
     try:
-        return abs(int_or_float(value))
+        return abs(valid_numeric(value))
     except (ValueError, TypeError):
         try:
             return abs(value)
