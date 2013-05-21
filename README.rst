@@ -6,6 +6,11 @@ django-mathfilters
     :alt: Build status
     :target: http://travis-ci.org/dbrgn/django-mathfilters
 
+.. image:: https://pypip.in/d/django-mathfilters/badge.png
+    :alt: PyPI download stats
+    :target: https://crate.io/packages/django-mathfilters
+
+
 django-mathfilters is a pip-installable module that provides different simple
 math filters for Django.
 
