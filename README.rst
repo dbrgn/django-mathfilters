@@ -45,6 +45,7 @@ provides the following filters:
 * ``mul`` – multiplication
 * ``div`` – division
 * ``abs`` – absolute value
+* ``mod`` – modulo
 
 **Example:**
 

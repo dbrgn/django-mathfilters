@@ -130,5 +130,17 @@ class AbsoluteTest(unittest.TestCase):
         self.assertEqual(Decimal('9.99'), mathfilters.absolute(Decimal('-9.99')))
 
 
+class ModuloTest(unittest.TestCase):
+
+    def test_positive(self):
+        self.assertEqual(2, mathfilters.mod('12', '5'))
+
+    def test_negative(self):
+        self.assertEqual(-3, mathfilters.mod('12', '-5'))
+
+    def test_float(self):
+        self.assertEqual(3.0, mathfilters.mod('27.5', '3.5'))
+
+
 if __name__ == '__main__':
     unittest.main()
