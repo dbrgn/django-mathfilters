@@ -65,7 +65,8 @@ def absolute(value):
             return ''
 absolute.is_safe = False
 
-@register.filter(name='mod')
+
+@register.filter()
 def mod(value, arg):
     """Returns the modulo value."""
     try:
