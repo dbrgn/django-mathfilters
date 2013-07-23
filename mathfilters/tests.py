@@ -103,7 +103,7 @@ class DivisionTest(unittest.TestCase):
         val2 = Decimal('3.3')
         self.assertEqual(Decimal('3'), mathfilters.div(val1, val2))
 
-    def test_decimal_decimal(self):
+    def test_decimal_int(self):
         val1 = Decimal('9.9')
         val2 = 3
         self.assertEqual(Decimal('3.3'), mathfilters.div(val1, val2))
