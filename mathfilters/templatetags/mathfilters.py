@@ -16,7 +16,7 @@ def valid_numeric(arg):
 
 @register.filter
 def sub(value, arg):
-    """Subtracts the arg from the value."""
+    """Subtract the arg from the value."""
     try:
         return valid_numeric(value) - valid_numeric(arg)
     except (ValueError, TypeError):
@@ -29,7 +29,7 @@ sub.is_safe = False
 
 @register.filter
 def mul(value, arg):
-    """Multiplies the arg with the value."""
+    """Multiply the arg with the value."""
     try:
         return valid_numeric(value) * valid_numeric(arg)
     except (ValueError, TypeError):
@@ -42,7 +42,7 @@ mul.is_safe = False
 
 @register.filter()
 def div(value, arg):
-    """Divides the arg by the value."""
+    """Divide the arg by the value."""
     try:
         return valid_numeric(value) / valid_numeric(arg)
     except (ValueError, TypeError):
@@ -55,7 +55,7 @@ div.is_safe = False
 
 @register.filter(name='abs')
 def absolute(value):
-    """Returns the absolute value."""
+    """Return the absolute value."""
     try:
         return abs(valid_numeric(value))
     except (ValueError, TypeError):
@@ -68,7 +68,7 @@ absolute.is_safe = False
 
 @register.filter()
 def mod(value, arg):
-    """Returns the modulo value."""
+    """Return the modulo value."""
     try:
         return valid_numeric(value) % valid_numeric(arg)
     except (ValueError, TypeError):
