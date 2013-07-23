@@ -6,6 +6,10 @@ django-mathfilters
     :alt: Build status
     :target: http://travis-ci.org/dbrgn/django-mathfilters
 
+.. image:: https://coveralls.io/repos/dbrgn/django-mathfilters/badge.png?branch=master
+    :alt: Coverage
+    :target: https://coveralls.io/r/dbrgn/django-mathfilters
+
 .. image:: https://pypip.in/d/django-mathfilters/badge.png
     :alt: PyPI download stats
     :target: https://crate.io/packages/django-mathfilters
