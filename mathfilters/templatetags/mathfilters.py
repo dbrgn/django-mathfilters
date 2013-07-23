@@ -12,7 +12,7 @@ def valid_numeric(arg):
         return int(arg)
     except ValueError:
         return float(arg)
-    
+
 
 @register.filter
 def sub(value, arg):
@@ -64,3 +64,16 @@ def absolute(value):
         except Exception:
             return ''
 absolute.is_safe = False
+
+
+@register.filter()
+def mod(value, arg):
+    """Returns the modulo value."""
+    try:
+        return valid_numeric(value) % valid_numeric(arg)
+    except (ValueError, TypeError):
+        try:
+            return value % arg
+        except Exception:
+            return ''
+mod.is_safe = False
