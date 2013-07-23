@@ -2,7 +2,7 @@
 source =
     mathfilters
 omit =
-    tabination/tests.py
+    mathfilters/tests.py
 
 [report]
 exclude_lines =
