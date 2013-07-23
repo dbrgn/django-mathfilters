@@ -1,1 +1,10 @@
+Main Authors
+============
+
+Danilo Bargen (@dbrgn)
+
+Code Contributors
+=================
+
 Baptiste Millou (@Sheeprider)
+Keith (@keithhackbarth)
