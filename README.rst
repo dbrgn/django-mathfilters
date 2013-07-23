@@ -74,6 +74,22 @@ provides the following filters:
     </ul>
 
 
+Changelog
+=========
+
+v0.2.0 (2013-07-23)
+
+- [add] New ``mod`` filter
+
+v0.1.3 (2012-12-04)
+
+- [add] Support for ``decimal.Decimal``
+
+v0.1.2 (2012-10-09)
+
+- [add] Initial version
+
+
 License
 =======
 
