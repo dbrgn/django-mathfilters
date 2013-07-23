@@ -40,7 +40,7 @@ def mul(value, arg):
 mul.is_safe = False
 
 
-@register.filter()
+@register.filter
 def div(value, arg):
     """Divide the arg by the value."""
     try:
@@ -66,7 +66,7 @@ def absolute(value):
 absolute.is_safe = False
 
 
-@register.filter()
+@register.filter
 def mod(value, arg):
     """Return the modulo value."""
     try:
