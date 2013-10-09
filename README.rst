@@ -28,6 +28,10 @@ in a new Django project.
 It currently supports ``int``, ``float``, ``Decimal`` and ``cDecimal`` types, or
 any other type that can be converted to int or float.
 
+Note that when you have the ``cdecimal`` package installed, I assume all
+``Decimal`` values that are passed to the tag are of ``cdecimal`` type. If they
+aren't, weird things may happen.
+
 
 Installation
 ============

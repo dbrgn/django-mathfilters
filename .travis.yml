@@ -10,8 +10,10 @@ env:
     - TOXENV=py27-django13
     - TOXENV=py27-django14
     - TOXENV=py27-django15
+    - TOXENV=py27-django15-cdecimal
     - TOXENV=py32-django15
     - TOXENV=py33-django15
+    - TOXENV=py33-django15-cdecimal
     - TOXENV=pypy-django11
     - TOXENV=pypy-django12
     - TOXENV=pypy-django13
