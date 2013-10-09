@@ -25,8 +25,8 @@ Django ticket `#361 <https://code.djangoproject.com/ticket/361>`_ has been
 closed as *wontfix*, so I had to create an alternative that is easy to install
 in a new Django project.
 
-It currently supports ``int``, ``float`` and ``Decimal`` types, or any other
-type that can be converted to int or float.
+It currently supports ``int``, ``float``, ``Decimal`` and ``cDecimal`` types, or
+any other type that can be converted to int or float.
 
 
 Installation
@@ -81,13 +81,19 @@ provides the following filters:
 Changelog
 =========
 
+v0.2.1 (2013-10-09)
+
+- [add] Use ``cdecimal`` instead of ``decimal`` if available
+- [add] When combining ``float`` and ``Decimal`` values, automatically convert
+  float to Decimal
+
 v0.2.0 (2013-07-23)
 
 - [add] New ``mod`` filter
 
 v0.1.3 (2012-12-04)
 
-- [add] Support for ``decimal.Decimal``
+- [add] Support for ``Decimal`` type
 
 v0.1.2 (2012-10-09)
 
