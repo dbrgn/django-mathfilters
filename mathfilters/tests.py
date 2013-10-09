@@ -35,6 +35,39 @@ class NumericConverterTest(unittest.TestCase):
         self.assertEqual(Decimal('-2.3'), mathfilters.valid_numeric(Decimal('-2.3')))
 
 
+class DecimalFloatHandlerTest(unittest.TestCase):
+
+    def test_int_float(self):
+        a, b = mathfilters.handle_float_decimal_combinations(1, 2.0, '+')
+        self.assertTrue(isinstance(a, int), 'Type is {0}'.format(type(a)))
+        self.assertTrue(isinstance(b, float), 'Type is {0}'.format(type(b)))
+
+    def test_float_float(self):
+        a, b = mathfilters.handle_float_decimal_combinations(1.0, 2.0, '+')
+        self.assertTrue(isinstance(a, float), 'Type is {0}'.format(type(a)))
+        self.assertTrue(isinstance(b, float), 'Type is {0}'.format(type(b)))
+
+    def test_float_decimal(self):
+        a, b = mathfilters.handle_float_decimal_combinations(1.0, Decimal('2.0'), '+')
+        self.assertTrue(isinstance(a, Decimal), 'Type is {0}'.format(type(a)))
+        self.assertTrue(isinstance(b, Decimal), 'Type is {0}'.format(type(b)))
+
+    def test_decimal_float(self):
+        a, b = mathfilters.handle_float_decimal_combinations(Decimal('2.0'), 1.0, '+')
+        self.assertTrue(isinstance(a, Decimal), 'Type is {0}'.format(type(a)))
+        self.assertTrue(isinstance(b, Decimal), 'Type is {0}'.format(type(b)))
+
+    def test_decimal_int(self):
+        a, b = mathfilters.handle_float_decimal_combinations(Decimal('2.0'), 1, '+')
+        self.assertTrue(isinstance(a, Decimal), 'Type is {0}'.format(type(a)))
+        self.assertTrue(isinstance(b, int), 'Type is {0}'.format(type(b)))
+
+    def test_decimal_decimal(self):
+        a, b = mathfilters.handle_float_decimal_combinations(Decimal('2.0'), Decimal('1.0'), '+')
+        self.assertTrue(isinstance(a, Decimal), 'Type is {0}'.format(type(a)))
+        self.assertTrue(isinstance(b, Decimal), 'Type is {0}'.format(type(b)))
+
+
 class SubtractionTest(unittest.TestCase):
 
     def test_positive(self):
