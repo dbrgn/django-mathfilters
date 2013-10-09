@@ -57,7 +57,7 @@ provides the following filters:
 
 **Example:**
 
-::
+.. sourcecode:: html
 
     {% load mathfilters %}
 
