@@ -1,7 +1,17 @@
+# -*- coding: utf-8 -*-
 from __future__ import print_function, division, absolute_import, unicode_literals
+
 import unittest
-from decimal import Decimal
+import logging
+try:
+    from cdecimal import Decimal
+except ImportError:
+    from decimal import Decimal
+
 from templatetags import mathfilters
+
+
+logging.basicConfig(level=logging.ERROR)
 
 
 class NumericConverterTest(unittest.TestCase):
@@ -52,6 +62,16 @@ class SubtractionTest(unittest.TestCase):
         val2 = 9
         self.assertEqual(Decimal('0.999'), mathfilters.sub(val1, val2))
 
+    def test_float_decimal(self):
+        """Regression test for issue #3."""
+        result = mathfilters.sub('201.7', Decimal('3.1'))
+        self.assertTrue(198 < result < 199, repr(result))
+
+    def test_decimal_float(self):
+        """Regression test for issue #3."""
+        result = mathfilters.sub(Decimal('201.7'), '3.1')
+        self.assertTrue(198 < result < 199, repr(result))
+
 
 class MultiplicationTest(unittest.TestCase):
 
@@ -80,6 +100,16 @@ class MultiplicationTest(unittest.TestCase):
         val2 = 3
         self.assertEqual(Decimal('9.9'), mathfilters.mul(val1, val2))
 
+    def test_float_decimal(self):
+        """Regression test for issue #3."""
+        result = mathfilters.mul('2.2', Decimal('3.1'))
+        self.assertTrue(6 < result < 7, repr(result))
+
+    def test_decimal_float(self):
+        """Regression test for issue #3."""
+        result = mathfilters.mul(Decimal('2.2'), '3.1')
+        self.assertTrue(6 < result < 7, repr(result))
+
 
 class DivisionTest(unittest.TestCase):
 
@@ -107,6 +137,16 @@ class DivisionTest(unittest.TestCase):
         val1 = Decimal('9.9')
         val2 = 3
         self.assertEqual(Decimal('3.3'), mathfilters.div(val1, val2))
+
+    def test_float_decimal(self):
+        """Regression test for issue #3."""
+        result = mathfilters.div('201.7', Decimal('3.1'))
+        self.assertTrue(65 < result < 66, repr(result))
+
+    def test_decimal_float(self):
+        """Regression test for issue #3."""
+        result = mathfilters.div(Decimal('201.7'), '3.1')
+        self.assertTrue(65 < result < 66, repr(result))
 
 
 class AbsoluteTest(unittest.TestCase):
@@ -140,6 +180,16 @@ class ModuloTest(unittest.TestCase):
 
     def test_float(self):
         self.assertEqual(3.0, mathfilters.mod('27.5', '3.5'))
+
+    def test_float_decimal(self):
+        """Regression test for issue #3."""
+        result = mathfilters.mod('7.8', Decimal('2.2'))
+        self.assertTrue(1 < result < 2, repr(result))
+
+    def test_decimal_float(self):
+        """Regression test for issue #3."""
+        result = mathfilters.mod(Decimal('7.8'), '2.2')
+        self.assertTrue(1 < result < 2, repr(result))
 
 
 if __name__ == '__main__':
