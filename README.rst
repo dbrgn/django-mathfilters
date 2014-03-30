@@ -15,8 +15,8 @@ django-mathfilters
     :target: https://crate.io/packages/django-mathfilters
 
 
-django-mathfilters is a pip-installable module that provides different simple
-math filters for Django.
+django-mathfilters is a pip-installable Python 2/3 module that provides
+different simple math filters for Django.
 
 Django provides an ``add`` template filter, but no corresponding subtracting,
 multiplying or dividing filters.
@@ -28,9 +28,9 @@ in a new Django project.
 It currently supports ``int``, ``float``, ``Decimal`` and ``cDecimal`` types, or
 any other type that can be converted to int or float.
 
-Note that when you have the ``cdecimal`` package installed, I assume all
-``Decimal`` values that are passed to the tag are of ``cdecimal`` type. If they
-aren't, weird things may happen.
+**WARNING: Note that when you have the ``cdecimal`` package installed, I assume
+all ``Decimal`` values that are passed to the tag are of ``cdecimal`` type. If
+they aren't, weird things may happen.**
 
 
 Installation
@@ -80,6 +80,14 @@ provides the following filters:
 
         <li>|-13| = {{ -13|abs }}</li>
     </ul>
+
+
+Version Support
+===============
+
+This module supports Python 2.6–2.7 and 3.2–3.3 as well as PyPy.
+
+Supported Django versions are 1.1 to 1.6.
 
 
 Changelog
