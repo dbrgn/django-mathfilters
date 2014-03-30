@@ -85,9 +85,12 @@ provides the following filters:
 Version Support
 ===============
 
-This module supports Python 2.6–2.7 and 3.2–3.3 as well as PyPy.
+This module supports Python 2.6–2.7 and 3.2–3.4 as well as PyPy.
 
 Supported Django versions are 1.1 to 1.6.
+
+See https://travis-ci.org/dbrgn/django-mathfilters for the full build matrix.
+(Python 3.4 is not yet included as it's not yet supported by Travis CI.)
 
 
 Changelog
