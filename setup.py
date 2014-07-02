@@ -1,11 +1,14 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
+from __future__ import absolute_import
+import codecs
 from distutils.core import setup
 
 setup(name='django-mathfilters',
       version='0.2.1',
       description='A set of simple math filters for Django',
-      long_description=open('README.rst').read(),
+      long_description=codecs.open('README.rst', encoding='utf-8').read(),
       author='Danilo Bargen',
       author_email='mail@dbrgn.ch',
       url='https://github.com/dbrgn/django-mathfilters',
