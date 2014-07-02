@@ -78,6 +78,21 @@ def div(value, arg):
 div.is_safe = False
 
 
+@register.filter
+def intdiv(value, arg):
+    """Divide the arg by the value. Use integer (floor) division."""
+    try:
+        nvalue, narg = handle_float_decimal_combinations(
+            valid_numeric(value), valid_numeric(arg), '//')
+        return nvalue // narg
+    except (ValueError, TypeError):
+        try:
+            return value // arg
+        except Exception:
+            return ''
+intdiv.is_safe = False
+
+
 @register.filter(name='abs')
 def absolute(value):
     """Return the absolute value."""

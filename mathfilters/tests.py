@@ -182,6 +182,51 @@ class DivisionTest(unittest.TestCase):
         self.assertTrue(65 < result < 66, repr(result))
 
 
+class IntegerDivisionTest(unittest.TestCase):
+
+    def test_positive(self):
+        self.assertEqual(3, mathfilters.intdiv('12', '4'))
+
+    def test_negative1(self):
+        self.assertEqual(-2, mathfilters.intdiv('10', '-5'))
+
+    def test_negative2(self):
+        self.assertEqual(-2, mathfilters.intdiv('-10', '5'))
+
+    def test_negative3(self):
+        self.assertEqual(2, mathfilters.intdiv('-10', '-5'))
+
+    def test_float1(self):
+        result = mathfilters.intdiv('7', '2')
+        self.assertTrue(isinstance(result, int))
+        self.assertEqual(3, result)
+
+    def test_float2(self):
+        result = mathfilters.intdiv('27.2', '3.2')
+        self.assertTrue(isinstance(result, float))
+        self.assertEqual(8.0, result)
+
+    def test_decimal_decimal(self):
+        val1 = Decimal('7.0')
+        val2 = Decimal('2.0')
+        self.assertEqual(Decimal('3'), mathfilters.intdiv(val1, val2))
+
+    def test_decimal_int(self):
+        val1 = Decimal('9.9')
+        val2 = 3
+        self.assertEqual(Decimal('3'), mathfilters.intdiv(val1, val2))
+
+    def test_float_decimal(self):
+        """Regression test for issue #3."""
+        result = mathfilters.intdiv('201.7', Decimal('3.1'))
+        self.assertEqual(Decimal('65'), result)
+
+    def test_decimal_float(self):
+        """Regression test for issue #3."""
+        result = mathfilters.intdiv(Decimal('201.7'), '3.1')
+        self.assertEqual(Decimal('65'), result)
+
+
 class AbsoluteTest(unittest.TestCase):
 
     def test_positive(self):
