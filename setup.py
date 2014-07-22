@@ -6,7 +6,7 @@ import codecs
 from distutils.core import setup
 
 setup(name='django-mathfilters',
-      version='0.2.1',
+      version='0.3.0',
       description='A set of simple math filters for Django',
       long_description=codecs.open('README.rst', encoding='utf-8').read(),
       author='Danilo Bargen',
