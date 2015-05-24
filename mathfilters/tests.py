@@ -270,5 +270,23 @@ class ModuloTest(unittest.TestCase):
         self.assertTrue(1 < result < 2, repr(result))
 
 
+class SumTest(unittest.TestCase):
+
+    def test_positive(self):
+        self.assertEqual(11, mathfilters.sum('7', '4'))
+
+    def test_negative_negative(self):
+        self.assertEqual(-4, mathfilters.sum('-1', '-3'))
+
+    def test_negative_positive(self):
+        self.assertEqual(6, mathfilters.sum('-3', '9'))
+
+    def test_positive_negative(self):
+        self.assertEqual(4, mathfilters.sum('5', '-1'))
+
+    def test_float_int(self):
+        self.assertEqual(2.5, mathfilters.sum('0.5', '2'))
+
+
 if __name__ == '__main__':
     unittest.main()
