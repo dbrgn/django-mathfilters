@@ -121,8 +121,8 @@ def mod(value, arg):
 mod.is_safe = False
 
 
-@register.filter(name='sum')
-def sum(value, arg):
+@register.filter(name='addition')
+def addition(value, arg):
     """Float-friendly replacement for Django's built-in `add` filter."""
     try:
         nvalue, narg = handle_float_decimal_combinations(
@@ -133,4 +133,4 @@ def sum(value, arg):
             return value + arg
         except Exception:
             return ''
-sum.is_safe = False
+addition.is_safe = False
