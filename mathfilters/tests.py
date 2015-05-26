@@ -270,5 +270,37 @@ class ModuloTest(unittest.TestCase):
         self.assertTrue(1 < result < 2, repr(result))
 
 
+class AdditionTest(unittest.TestCase):
+
+    def test_positive(self):
+        self.assertEqual(11, mathfilters.addition('7', '4'))
+
+    def test_negative_negative(self):
+        self.assertEqual(-4, mathfilters.addition('-1', '-3'))
+
+    def test_negative_positive(self):
+        self.assertEqual(6, mathfilters.addition('-3', '9'))
+
+    def test_positive_negative(self):
+        self.assertEqual(4, mathfilters.addition('5', '-1'))
+
+    def test_float_int(self):
+        self.assertEqual(2.5, mathfilters.addition('0.5', '2'))
+
+    def test_decimal_decimal(self):
+        val1 = Decimal('7.3')
+        val2 = Decimal('2.7')
+        self.assertEqual(Decimal('10'), mathfilters.addition(val1, val2))
+
+    def test_decimal_int(self):
+        val1 = Decimal('1.9')
+        val2 = 4
+        self.assertEqual(Decimal('5.9'), mathfilters.addition(val1, val2))
+
+    def test_float_decimal(self):
+        result = mathfilters.addition('3.7', Decimal('11.1'))
+        self.assertEqual(Decimal('14.8'), result)
+
+
 if __name__ == '__main__':
     unittest.main()

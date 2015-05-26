@@ -119,3 +119,18 @@ def mod(value, arg):
         except Exception:
             return ''
 mod.is_safe = False
+
+
+@register.filter(name='addition')
+def addition(value, arg):
+    """Float-friendly replacement for Django's built-in `add` filter."""
+    try:
+        nvalue, narg = handle_float_decimal_combinations(
+            valid_numeric(value), valid_numeric(arg), '+')
+        return nvalue + narg
+    except (ValueError, TypeError):
+        try:
+            return value + arg
+        except Exception:
+            return ''
+addition.is_safe = False
