@@ -8,3 +8,4 @@ Code Contributors
 
 Baptiste Millou (@Sheeprider)
 Keith (@keithhackbarth)
+Kevin Smith (@centricle)
