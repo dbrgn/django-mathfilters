@@ -55,6 +55,8 @@ provides the following filters:
 * ``intdiv`` – integer (floor) division
 * ``abs`` – absolute value
 * ``mod`` – modulo
+* ``addition`` – replacement for the ``add`` filter with support for float /
+  decimal types
 
 **Example:**
 
