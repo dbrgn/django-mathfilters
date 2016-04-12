@@ -5,6 +5,10 @@ Possible log types are ``[add]``, ``[bug]``, ``[change]`` and ``[info]``.
 
 ---
 
+v0.4.0 (2016-04-12)
+
+- [add] New float/decimal friendly ``addition`` filter
+
 v0.3.0 (2014-07-22)
 
 - [add] New ``intdiv`` filter for integer division
