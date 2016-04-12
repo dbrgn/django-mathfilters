@@ -18,13 +18,12 @@ env:
     - TOXENV=py33-django18
     - TOXENV=py33-django18-cdecimal
 
+    - TOXENV=py34-django15
+    - TOXENV=py34-django16
     - TOXENV=py34-django17
     - TOXENV=py34-django18
     - TOXENV=py34-django18-cdecimal
 
-    - TOXENV=py35-django15
-    - TOXENV=py35-django16
-    - TOXENV=py35-django17
     - TOXENV=py35-django18
     - TOXENV=py35-django18-cdecimal
 
