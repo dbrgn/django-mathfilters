@@ -14,18 +14,19 @@ env:
     - TOXENV=py27-django18
     - TOXENV=py27-django18-cdecimal
 
-    - TOXENV=py32-django17
-    - TOXENV=py32-django18
-
     - TOXENV=py33-django17
     - TOXENV=py33-django18
     - TOXENV=py33-django18-cdecimal
 
-    - TOXENV=py34-django15
-    - TOXENV=py34-django16
     - TOXENV=py34-django17
     - TOXENV=py34-django18
     - TOXENV=py34-django18-cdecimal
+
+    - TOXENV=py35-django15
+    - TOXENV=py35-django16
+    - TOXENV=py35-django17
+    - TOXENV=py35-django18
+    - TOXENV=py35-django18-cdecimal
 
     - TOXENV=pypy-django14
     - TOXENV=pypy-django15
@@ -41,11 +42,11 @@ matrix:
     allow_failures:
         - env: TOXENV=cov
 install:
-    - pip install --quiet --use-mirrors tox
+    - pip install --quiet tox
 script:
     - tox
 after_script:
     - if [ $TOXENV == "cov" ]; then
-      pip install --quiet --use-mirrors coveralls;
+      pip install --quiet coveralls;
       coveralls;
       fi
