@@ -5,6 +5,11 @@ Possible log types are ``[add]``, ``[bug]``, ``[change]`` and ``[info]``.
 
 ---
 
+v1.0.0 (2020-02-10)
+
+- [change] Drop support for Python <3.3 and Django <1.11
+- [change] Drop support for cdecimal (#20)
+
 v0.4.0 (2016-04-12)
 
 - [add] New float/decimal friendly ``addition`` filter
