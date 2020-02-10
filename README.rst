@@ -25,12 +25,8 @@ Django ticket `#361 <https://code.djangoproject.com/ticket/361>`_ has been
 closed as *wontfix*, so I had to create an alternative that is easy to install
 in a new Django project.
 
-It currently supports ``int``, ``float``, ``Decimal`` and ``cDecimal`` types, or
-any other type that can be converted to int or float.
-
-**WARNING: Note that when you have the ``cdecimal`` package installed, I assume
-all ``Decimal`` values that are passed to the tag are of ``cdecimal`` type. If
-they aren't, weird things may happen.**
+It currently supports ``int``, ``float`` and ``Decimal`` types, or any other
+type that can be converted to int or float.
 
 
 Installation

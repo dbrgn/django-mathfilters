@@ -2,10 +2,7 @@
 from __future__ import print_function, division, absolute_import, unicode_literals
 
 import logging
-try:
-    from cdecimal import Decimal
-except ImportError:
-    from decimal import Decimal
+from decimal import Decimal
 
 from django.template import Library
 

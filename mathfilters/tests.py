@@ -3,10 +3,7 @@ from __future__ import print_function, division, absolute_import, unicode_litera
 
 import unittest
 import logging
-try:
-    from cdecimal import Decimal
-except ImportError:
-    from decimal import Decimal
+from decimal import Decimal
 
 from templatetags import mathfilters
 
