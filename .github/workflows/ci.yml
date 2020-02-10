@@ -15,14 +15,14 @@ jobs:
     strategy:
       matrix:
         python:
-          - 3.5
-          - 3.6
-          - 3.7
-          - pypy3
+          - '3.5'
+          - '3.6'
+          - '3.7'
+          - 'pypy3'
         django:
-          - 1.11
-          - 2.2
-          - 3.0
+          - '1.11'
+          - '2.2'
+          - '3.0'
     name: Python ${{ matrix.python }} / Django ${{ matrix.django }}
     steps:
       - uses: actions/checkout@v2
