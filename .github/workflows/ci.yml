@@ -1,0 +1,36 @@
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+  schedule:
+    - cron: '30 3 * * 2'
+
+name: CI
+
+jobs:
+
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python:
+          - 3.5
+          - 3.6
+          - 3.7
+          - pypy3
+        django:
+          - 1.11
+          - 2.2
+          - 3.0
+    name: Python ${{ matrix.python }} / Django ${{ matrix.django }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup python ${{ matrix.python }}
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Setup django ${{ matrix.django }}
+        run: pip install "django<=${{ matrix.django }}"
+      - name: Run tests
+        run: python -m mathfilters.tests

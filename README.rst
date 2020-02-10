@@ -2,13 +2,9 @@
 django-mathfilters
 ##################
 
-.. image:: https://secure.travis-ci.org/dbrgn/django-mathfilters.png?branch=master
+.. image:: https://github.com/dbrgn/django-mathfilters/workflows/CI/badge.svg
     :alt: Build status
-    :target: http://travis-ci.org/dbrgn/django-mathfilters
-
-.. image:: https://coveralls.io/repos/dbrgn/django-mathfilters/badge.png?branch=master
-    :alt: Coverage
-    :target: https://coveralls.io/r/dbrgn/django-mathfilters
+    :target: https://github.com/dbrgn/django-mathfilters/actions?query=branch%3Amaster
 
 .. image:: https://pypip.in/d/django-mathfilters/badge.png
     :alt: PyPI download stats
@@ -87,7 +83,7 @@ Version Support
 This module officially supports Python 3.5+ as well as PyPy3. Support for Python
 3.3 and 3.4 is provided on best-effort basis, but there are no CI tests for it.
 
-Supported Django versions are 1.11+.
+Supported Django versions are 1.11+, 2.x and 3.x.
 
 
 License
