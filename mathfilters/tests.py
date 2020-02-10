@@ -1,11 +1,8 @@
-# -*- coding: utf-8 -*-
-from __future__ import print_function, division, absolute_import, unicode_literals
-
 import unittest
 import logging
 from decimal import Decimal
 
-from templatetags import mathfilters
+from .templatetags import mathfilters
 
 
 logging.basicConfig(level=logging.ERROR)

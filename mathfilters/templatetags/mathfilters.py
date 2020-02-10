@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-from __future__ import print_function, division, absolute_import, unicode_literals
-
 import logging
 from decimal import Decimal
 
@@ -42,7 +39,6 @@ def sub(value, arg):
             return value - arg
         except Exception:
             return ''
-sub.is_safe = False
 
 
 @register.filter
@@ -57,7 +53,6 @@ def mul(value, arg):
             return value * arg
         except Exception:
             return ''
-mul.is_safe = False
 
 
 @register.filter
@@ -72,7 +67,6 @@ def div(value, arg):
             return value / arg
         except Exception:
             return ''
-div.is_safe = False
 
 
 @register.filter
@@ -87,7 +81,6 @@ def intdiv(value, arg):
             return value // arg
         except Exception:
             return ''
-intdiv.is_safe = False
 
 
 @register.filter(name='abs')
@@ -100,7 +93,6 @@ def absolute(value):
             return abs(value)
         except Exception:
             return ''
-absolute.is_safe = False
 
 
 @register.filter
@@ -115,7 +107,6 @@ def mod(value, arg):
             return value % arg
         except Exception:
             return ''
-mod.is_safe = False
 
 
 @register.filter(name='addition')
@@ -130,4 +121,3 @@ def addition(value, arg):
             return value + arg
         except Exception:
             return ''
-addition.is_safe = False
