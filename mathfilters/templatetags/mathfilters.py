@@ -19,10 +19,14 @@ def valid_numeric(arg):
 
 def handle_float_decimal_combinations(value, arg, operation):
     if isinstance(value, float) and isinstance(arg, Decimal):
-        logger.warning('Unsafe operation: {0!r} {1} {2!r}.'.format(value, operation, arg))
+        logger.warning(
+            'Unsafe operation: {0!r} {1} {2!r}.'.format(value, operation, arg)
+        )
         value = Decimal(str(value))
     if isinstance(value, Decimal) and isinstance(arg, float):
-        logger.warning('Unsafe operation: {0!r} {1} {2!r}.'.format(value, operation, arg))
+        logger.warning(
+            'Unsafe operation: {0!r} {1} {2!r}.'.format(value, operation, arg)
+        )
         arg = Decimal(str(arg))
     return value, arg
 
@@ -32,7 +36,8 @@ def sub(value, arg):
     """Subtract the arg from the value."""
     try:
         nvalue, narg = handle_float_decimal_combinations(
-            valid_numeric(value), valid_numeric(arg), '-')
+            valid_numeric(value), valid_numeric(arg), '-'
+        )
         return nvalue - narg
     except (ValueError, TypeError):
         try:
@@ -46,7 +51,8 @@ def mul(value, arg):
     """Multiply the arg with the value."""
     try:
         nvalue, narg = handle_float_decimal_combinations(
-            valid_numeric(value), valid_numeric(arg), '*')
+            valid_numeric(value), valid_numeric(arg), '*'
+        )
         return nvalue * narg
     except (ValueError, TypeError):
         try:
@@ -60,7 +66,8 @@ def div(value, arg):
     """Divide the arg by the value."""
     try:
         nvalue, narg = handle_float_decimal_combinations(
-            valid_numeric(value), valid_numeric(arg), '/')
+            valid_numeric(value), valid_numeric(arg), '/'
+        )
         return nvalue / narg
     except (ValueError, TypeError):
         try:
@@ -74,7 +81,8 @@ def intdiv(value, arg):
     """Divide the arg by the value. Use integer (floor) division."""
     try:
         nvalue, narg = handle_float_decimal_combinations(
-            valid_numeric(value), valid_numeric(arg), '//')
+            valid_numeric(value), valid_numeric(arg), '//'
+        )
         return nvalue // narg
     except (ValueError, TypeError):
         try:
@@ -100,7 +108,8 @@ def mod(value, arg):
     """Return the modulo value."""
     try:
         nvalue, narg = handle_float_decimal_combinations(
-            valid_numeric(value), valid_numeric(arg), '%')
+            valid_numeric(value), valid_numeric(arg), '%'
+        )
         return nvalue % narg
     except (ValueError, TypeError):
         try:
@@ -114,7 +123,8 @@ def addition(value, arg):
     """Float-friendly replacement for Django's built-in `add` filter."""
     try:
         nvalue, narg = handle_float_decimal_combinations(
-            valid_numeric(value), valid_numeric(arg), '+')
+            valid_numeric(value), valid_numeric(arg), '+'
+        )
         return nvalue + narg
     except (ValueError, TypeError):
         try:

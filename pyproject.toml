@@ -1,0 +1,3 @@
+[tool.black]
+target-version = ['py33']
+skip-string-normalization = true

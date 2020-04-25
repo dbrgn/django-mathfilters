@@ -86,6 +86,13 @@ This module officially supports Python 3.5+ as well as PyPy3. Support for Python
 Supported Django versions are 1.11+, 2.x and 3.x.
 
 
+Development
+===========
+
+This project uses `Black <https://black.readthedocs.io/>`__ for
+auto-formatting. Adherence to the rules is enforced in CI.
+
+
 License
 =======
 

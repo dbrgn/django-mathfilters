@@ -34,3 +34,13 @@ jobs:
         run: pip install "django<=${{ matrix.django }}"
       - name: Run tests
         run: python -m mathfilters.tests
+
+  check-formatting:
+    runs-on: ubuntu-latest
+    name: Check code formatting
+    steps:
+      - uses: actions/checkout@v2
+      - name: Black Code Formatter
+        uses: lgeiger/black-action@v1.0.1
+        with:
+          args: "mathfilters --check --diff"

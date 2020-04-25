@@ -9,7 +9,6 @@ logging.basicConfig(level=logging.ERROR)
 
 
 class NumericConverterTest(unittest.TestCase):
-
     def test_string(self):
         self.assertEqual(13, mathfilters.valid_numeric('13'))
         self.assertEqual(-13, mathfilters.valid_numeric('-13'))
@@ -30,7 +29,6 @@ class NumericConverterTest(unittest.TestCase):
 
 
 class DecimalFloatHandlerTest(unittest.TestCase):
-
     def test_int_float(self):
         a, b = mathfilters.handle_float_decimal_combinations(1, 2.0, '+')
         self.assertTrue(isinstance(a, int), 'Type is {0}'.format(type(a)))
@@ -57,13 +55,14 @@ class DecimalFloatHandlerTest(unittest.TestCase):
         self.assertTrue(isinstance(b, int), 'Type is {0}'.format(type(b)))
 
     def test_decimal_decimal(self):
-        a, b = mathfilters.handle_float_decimal_combinations(Decimal('2.0'), Decimal('1.0'), '+')
+        a, b = mathfilters.handle_float_decimal_combinations(
+            Decimal('2.0'), Decimal('1.0'), '+'
+        )
         self.assertTrue(isinstance(a, Decimal), 'Type is {0}'.format(type(a)))
         self.assertTrue(isinstance(b, Decimal), 'Type is {0}'.format(type(b)))
 
 
 class SubtractionTest(unittest.TestCase):
-
     def test_positive(self):
         self.assertEqual(3, mathfilters.sub('7', '4'))
 
@@ -101,7 +100,6 @@ class SubtractionTest(unittest.TestCase):
 
 
 class MultiplicationTest(unittest.TestCase):
-
     def test_positive(self):
         self.assertEqual(12, mathfilters.mul('3', '4'))
 
@@ -139,7 +137,6 @@ class MultiplicationTest(unittest.TestCase):
 
 
 class DivisionTest(unittest.TestCase):
-
     def test_positive(self):
         self.assertEqual(3, mathfilters.div('12', '4'))
 
@@ -177,7 +174,6 @@ class DivisionTest(unittest.TestCase):
 
 
 class IntegerDivisionTest(unittest.TestCase):
-
     def test_positive(self):
         self.assertEqual(3, mathfilters.intdiv('12', '4'))
 
@@ -222,7 +218,6 @@ class IntegerDivisionTest(unittest.TestCase):
 
 
 class AbsoluteTest(unittest.TestCase):
-
     def test_positive(self):
         self.assertEqual(21, mathfilters.absolute('21'))
 
@@ -243,7 +238,6 @@ class AbsoluteTest(unittest.TestCase):
 
 
 class ModuloTest(unittest.TestCase):
-
     def test_positive(self):
         self.assertEqual(2, mathfilters.mod('12', '5'))
 
@@ -265,7 +259,6 @@ class ModuloTest(unittest.TestCase):
 
 
 class AdditionTest(unittest.TestCase):
-
     def test_positive(self):
         self.assertEqual(11, mathfilters.addition('7', '4'))
 
